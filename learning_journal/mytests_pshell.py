@@ -1,6 +1,7 @@
 """
 unit Tests using pshell
 """
+
 from sqlalchemy import engine_from_config
 engine = engine_from_config(registry.settings, 'sqlalchemy.')
 from sqlalchemy.orm import sessionmaker

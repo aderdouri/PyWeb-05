@@ -36,9 +36,16 @@ class Entry(Base):
     created = Column(DateTime, default=func.now())
     edited = Column(DateTime, default=func.now())
 
+    """
+    returns all the entries in the database, ordered so that the most recent entry is first.
+    """
     @classmethod
     def all(cls, session):
         return session.query(cls).order_by(cls.id.desc()).all()
+
+    """
+    returns a single entry, given an id
+    """
 
     @classmethod
     def by_id(cls, session, myid):
